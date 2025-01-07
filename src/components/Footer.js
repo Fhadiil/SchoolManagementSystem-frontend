@@ -41,7 +41,7 @@ const Footer = () => {
         </div>
         <div className="mt-8 pt-8 border-t border-gray-700">
           <p className="text-center text-gray-400">
-            &copy; {new Date().getFullYear()} School Management System. All
+            &copy; {new Date().getFullYear()} Katagum School Management System. All
             rights reserved.
           </p>
         </div>
