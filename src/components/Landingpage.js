@@ -1,6 +1,19 @@
 import React from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const LandingPage = () => {
+  const sliderSettings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 4000,
+    arrows: false,
+  };
   return (
     <div>
       {/* Navbar Section */}
@@ -129,28 +142,115 @@ const LandingPage = () => {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section id="testimonials" className="py-16 bg-blue-50">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-semibold text-blue-500 mb-6">
+      {/* Dynamic Testimonials Section */}
+      <section
+        id="testimonials"
+        className="py-16 bg-gradient-to-b from-blue-50 to-indigo-50"
+      >
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-semibold text-blue-600 text-center mb-12">
             What Our Parents & Students Say
           </h2>
-          <div className="flex justify-center space-x-8">
-            <div className="bg-white p-6 rounded-md shadow-md max-w-xs">
-              <p className="text-gray-700 mb-4">
-                "Katagum School has transformed my child's education. They are
-                now more engaged and excited about learning!"
-              </p>
-              <h4 className="font-semibold text-lg">Jane Doe</h4>
-              <p className="text-gray-500">Parent</p>
+          <Slider {...sliderSettings}>
+            <div className="flex justify-center">
+              <div className="bg-white p-8 rounded-xl shadow-lg max-w-md mx-4 transition transform hover:scale-105">
+                <p className="text-gray-700 italic mb-6">
+                  "Katagum School has transformed my child's education. They are
+                  now more engaged and excited about learning!"
+                </p>
+                <h4 className="font-semibold text-lg text-blue-600">
+                  Jane Doe
+                </h4>
+                <p className="text-gray-500">Parent</p>
+              </div>
             </div>
-            <div className="bg-white p-6 rounded-md shadow-md max-w-xs">
-              <p className="text-gray-700 mb-4">
-                "The teachers at Katagum School are incredibly dedicated, and
-                the curriculum is always challenging and rewarding."
+            <div className="flex justify-center">
+              <div className="bg-white p-8 rounded-xl shadow-lg max-w-md mx-4 transition transform hover:scale-105">
+                <p className="text-gray-700 italic mb-6">
+                  "The teachers at Katagum School are incredibly dedicated, and
+                  the curriculum is always challenging and rewarding."
+                </p>
+                <h4 className="font-semibold text-lg text-blue-600">
+                  John Smith
+                </h4>
+                <p className="text-gray-500">Student</p>
+              </div>
+            </div>
+            <div className="flex justify-center">
+              <div className="bg-white p-8 rounded-xl shadow-lg max-w-md mx-4 transition transform hover:scale-105">
+                <p className="text-gray-700 italic mb-6">
+                  "The extracurricular activities at Katagum School are amazing.
+                  My child has developed new skills and confidence!"
+                </p>
+                <h4 className="font-semibold text-lg text-blue-600">
+                  Emily Davis
+                </h4>
+                <p className="text-gray-500">Parent</p>
+              </div>
+            </div>
+          </Slider>
+        </div>
+      </section>
+
+      {/* Upcoming Events Section */}
+      <section id="events" className="py-16 bg-white">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl font-semibold text-blue-500 mb-6">
+            Upcoming Events
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="bg-gray-100 p-6 rounded-md shadow-md">
+              <h3 className="font-semibold text-xl mb-2">
+                Admission Open Dates
+              </h3>
+              <p className="text-gray-700">
+                Admissions are open from March 1st to April 15th. Enroll now!
               </p>
-              <h4 className="font-semibold text-lg">John Smith</h4>
-              <p className="text-gray-500">Student</p>
+            </div>
+            <div className="bg-gray-100 p-6 rounded-md shadow-md">
+              <h3 className="font-semibold text-xl mb-2">
+                Parent-Teacher Meeting
+              </h3>
+              <p className="text-gray-700">
+                Join us for the Parent-Teacher meeting on February 20th.
+              </p>
+            </div>
+            <div className="bg-gray-100 p-6 rounded-md shadow-md">
+              <h3 className="font-semibold text-xl mb-2">Sports Day</h3>
+              <p className="text-gray-700">
+                Annual Sports Day is on March 25th. Don't miss the fun!
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Blog/News Section */}
+      <section id="blog" className="py-16 bg-gray-100">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl font-semibold text-blue-500 mb-6">
+            Latest News & Updates
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="bg-white p-6 rounded-md shadow-md">
+              <h3 className="font-semibold text-xl mb-4">Science Fair 2025</h3>
+              <p className="text-gray-700">
+                Katagum School's Science Fair was a huge success!
+              </p>
+              <a href="#" className="text-blue-500 hover:underline">
+                Read More
+              </a>
+            </div>
+            <div className="bg-white p-6 rounded-md shadow-md">
+              <h3 className="font-semibold text-xl mb-4">
+                New Library Resources
+              </h3>
+              <p className="text-gray-700">
+                We've added 500 new books to our library collection.
+              </p>
+              <a href="#" className="text-blue-500 hover:underline">
+                Read More
+              </a>
             </div>
           </div>
         </div>
