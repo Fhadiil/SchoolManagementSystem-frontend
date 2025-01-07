@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import {
   Menu,
   X,
@@ -306,37 +308,32 @@ const LandingPage = () => {
                 text: "Katagum School has transformed my child's education journey. The teachers' dedication and innovative approach to learning have made a remarkable difference.",
                 author: "Sarah Johnson",
                 role: "Parent",
-                image: "/api/placeholder/64/64",
               },
               {
                 text: "The quality of education and personal attention each student receives here is exceptional. My children have flourished academically and personally.",
                 author: "Michael Chen",
                 role: "Parent",
-                image: "/api/placeholder/64/64",
               },
               {
                 text: "As a student, I appreciate how the teachers make learning engaging and fun. The school's facilities and resources are outstanding.",
                 author: "Emma Thompson",
                 role: "Student",
-                image: "/api/placeholder/64/64",
               },
             ].map((testimonial, index) => (
-              <div key={index} className="px-4">
-                <div className="bg-white rounded-xl shadow-lg p-8 mx-4">
-                  <div className="flex items-center mb-6">
-                    <img
-                      src={testimonial.image}
-                      alt={testimonial.author}
-                      className="w-16 h-16 rounded-full"
-                    />
-                    <div className="ml-4">
-                      <h4 className="text-xl font-semibold text-gray-900">
-                        {testimonial.author}
-                      </h4>
-                      <p className="text-gray-600">{testimonial.role}</p>
+              <div key={index} className="px-4 pb-12">
+                <div className="bg-white rounded-xl shadow-lg p-8">
+                  <div className="flex flex-col items-center text-center">
+                    <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6">
+                      <span className="text-2xl">👤</span>
                     </div>
+                    <p className="text-gray-700 text-lg italic mb-6">
+                      "{testimonial.text}"
+                    </p>
+                    <h4 className="text-xl font-semibold text-gray-900">
+                      {testimonial.author}
+                    </h4>
+                    <p className="text-gray-600">{testimonial.role}</p>
                   </div>
-                  <p className="text-gray-700 italic">"{testimonial.text}"</p>
                 </div>
               </div>
             ))}
