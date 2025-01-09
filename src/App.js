@@ -10,10 +10,11 @@ function App() {
   const isLandingPage = location.pathname === "/";
 
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen bg-gray-100 flex flex-col">
       {!isLandingPage && <Navbar />}
-
-      <AppRoutes />
+      <main className="flex-grow">
+        <AppRoutes />
+      </main>
       {!isLandingPage && <Footer />}
     </div>
   );

@@ -23,7 +23,7 @@ const LoginPage = () => {
         // Store token in localStorage
         localStorage.setItem("token", response.data.token);
         localStorage.setItem("refresh_token", response.data.refresh);
-        navigate("/dashboard");
+        // navigate("/dashboard");
       })
       .catch((error) => {
         console.error("Login failed:", error);
